@@ -1,0 +1,107 @@
+name: XPCraftHub
+main: org.originmc.hub.Hub
+version: 5.0
+description: Hub Plugin For XPCraft
+authors: [Ciberg, Sudzzy, boomboompower]
+depend: [ShiftSpawn]
+
+commands:
+  eject:
+    description: Ejects any entity riding the player.
+    permission: hub.eject
+    permission-message: '§cYou do not have permission to use that command.'
+  help:
+    description: Replacement for Bukkits default help command.
+    permission: hub.help
+    permission-message: '§cYou do not have permission to use that command.'
+  hubreload:
+    aliases: [hreload]
+    description: Reloads the hub plugins configuration.
+    permission: hub.reload
+    permission-message: '§cYou do not have permission to use that command.'
+  ping:
+    description: Displays the players current ping.
+    permission: hub.ping
+    permission-message: '§cYou do not have permission to use that command.'
+  links:
+    aliases: [web, website, vote, ts, teamspeak]
+    description: Displays all server links to the player.
+    permission: hub.links
+    permission-message: '§cYou do not have permission to use that command.'
+  setspawn:
+    aliases: [ss]
+    description: Sets the server spawn.
+    permission: hub.setspawn
+    permission-message: '§cYou do not have permission to use that command.'
+
+permissions:
+  hub.build:
+    description: Bypass building resrictions.
+    default: false
+  hub.doublejump:
+    description: Perform a double jump.
+    default: false
+  hub.eject:
+    description: Ejects any entity riding the player.
+    default: false
+  hub.fireworks:
+    description: Shoots a firework once the player joins the server.
+    default: false
+  hub.floorslam:
+    description: Slam to the ground while double jumping.
+    default: false
+  hub.help:
+    description: Replacement for Bukkits default help command.
+    default: false
+  hub.inventory:
+    description: Bypass inventory editing restrictions.
+    default: false
+  hub.launchpad:
+    description: Use jumppads.
+    default: false
+  hub.links:
+    description: Displays all server links to the player.
+    default: false
+  hub.playerhider:
+    description: Use the player hider item.
+    default: false
+  hub.playerstacker:
+    description: Stack other players as mounts.
+    default: false
+  hub.reload:
+    description: Reloads the hub plugins configuration.
+    default: false
+  hub.serverselector:
+    description: Use the server selector item.
+    default: false
+  hub.setspawn:
+    description: Sets the server spawn.
+    default: false
+
+  hub.*:
+    default: false
+    children:
+      hub.kit.admin: true
+
+  hub.kit.admin:
+    default: op
+    children:
+      hub.kit.default: true
+      hub.build: true
+      hub.fireworks: true
+      hub.inventory: true
+      hub.reload: true
+      hub.setspawn: true
+
+  hub.kit.default:
+    default: true
+    children:
+      hub.doublejump: true
+      hub.eject: true
+      hub.floorslam: true
+      hub.help: true
+      hub.launchpad: true
+      hub.links: true
+      hub.playerhider: true
+      hub.playerstacker: true
+      hub.serverselector: true

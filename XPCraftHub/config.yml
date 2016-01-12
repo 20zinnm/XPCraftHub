@@ -1,0 +1,131 @@
+# Don't touch this. It's here to determine whether you need to refresh your config.
+config-version: 5
+
+# Disables all block burn damage on the server.
+disable-burn: true
+
+# Disables all block decay on the server.
+disable-decay: true
+
+# Disables all explosions on the server.
+disable-explosions: true
+
+# Disables all food level changes on the server.
+disable-food-level-change: true
+
+# Disables all inventory editing on the server.
+disable-inventory-editing: true
+
+# Disables all player damage on the server.
+disable-player-damage: true
+
+# Disable falling into the void. This will teleport the player back to the world spawn.
+disable-void-falling: true
+
+# Disables all weather changes on the server.
+disable-weather: true
+
+# Disables the ability to drop items
+disable-item-drops: true
+
+# Disabled the ability to eat food
+disable-eating: true
+
+# Disable the ability to place blocks 
+# Overriden if player has hub.place
+disable-placing: true
+
+# Message to be broadcasted when a new player joins the server. Set this to '' to display nothing.
+newbie-message: '&bWelcome our newest member, &3&l{PLAYER} &bto the server!'
+
+# Custom join message can be specified here. Set this to '' to display nothing.
+# join-message: '&b[+] &3{PLAYER} has joined the game.'
+join-messages:
+  default: '&b[+] &3{PLAYER} has joined the game.'
+  admin: '&b[+] &c{PLAYER} - Admin - has joined the game.'
+  op: '&b[+] &c&k:&r &a&l{PLAYER} &a- OP - has joined the game.'
+
+# Custom quit message can be specified here. Set this to '' to display nothing.
+quit-message:
+  default: '&c[+] &3{PLAYER} has left the game.'
+  admin: '&c[+] &4{PLAYER} - Admin - has left the game.'
+  op: '&c[+] &c&k:&r &4&l{PLAYER} &c- OP - has left the game.'
+
+links-message: |
+  &e&lWebsite: &7&oComing soon!
+  &e&lVote: &7&oComing soon!
+
+# Ensures the players inventory is clean when they join before inserting new items into their inventory.
+clean-inventory-on-join: true
+
+# Extra items that should be placed in a players inventory by default.
+default-items:
+  '4': type[chest] amount[1] name[&e&lVanity Shop] lore[&cComing soon!]
+  '5': type[workbench] amount[1] name[&e&lPreferences] lore[&cComing soon!]
+
+# Player hider configuration section.
+player-hider:
+  # By default, should all players within the hub server be hidden from one another?
+  default: false
+
+  # Inventory slot where the clickable item for this module should be placed. -1 to disable placing.
+  slot: 1
+
+  # Item that will be put into the players inventory when they can see other players.
+  item-enabled: type[watch] amount[1] name[&e&lPlayer Hider &7- &aEnabled]
+
+  # Item that will be put into the players inventory when they can not see other players.
+  item-disabled: type[watch] amount[1] name[&e&lPlayer Hider &7- &cDisabled]
+
+# Player stacker configuration section.
+player-stacker:
+  # By default, should all players within the hub server have player stacker enabled?
+  default: true
+
+  # Inventory slot where the clickable item for this module should be placed. -1 to disable placing.
+  slot: 8
+
+  # Item that will be put into the players inventory when they have stacker enabled.
+  item-enabled: type[redstone_torch_on] amount[1] name[&e&lPlayer Stacker &7- &aEnabled]
+
+  # Item that will be put into the players inventory when they have stacker disabled.
+  item-disabled: type[redstone_torch_on] amount[1] name[&e&lPlayer Stacker &7- &cDisabled]
+
+player-profile:
+  default: true
+  displayname: '&e&lPlayer Profile'
+  lore: |
+    This Is A Line
+    This Is Another Line!
+  
+# Server selector configuration section.
+server-selector:
+  # Inventory name of the server selector. This will be shown on the top of the inventory GUI.
+  inventory-name: 'Server Selector'
+
+  # Number of rows of the server selector inventory to display.
+  inventory-rows: 1
+
+  # Default item that will be displayed throughout the inventory.
+  default-item: type[stained_glass_pane] data[15] amount[1] name[ ]
+
+  # Inventory slot where the clickable item for this module should be placed. -1 to disable placing.
+  slot: 0
+
+  # Item in inventory to click in order to open the server selector menu.
+  clickable-item: type[compass] amount[1] name[&e&lServer Selector] lore[&7Right click to open]
+
+  # Command to execute in order to teleport the player to a specific server.
+  command: '/server {SERVER}'
+
+  # All the servers that are on the network you wish to add to the server selector list.
+  servers:
+    creative:
+      item: type[wool] data[14] amount[1] name[&cCreative] lore[&7Click to join]
+      slot: 0
+    survival:
+      item: type[wool] data[11] amount[1] name[&bSurvival] lore[&7Click to join|&6This is a new line]
+      slot: 1
+    shift1:
+      item: type[quartz_block] data[0] amount[1] name[&bShift] lore [&7Click to join | &6There is &e<time> &6time left.]
+      slot: 2
