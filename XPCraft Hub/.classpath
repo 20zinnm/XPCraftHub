@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/Julian/AppData/Roaming/!!! Julians mc things/Plugin API&apos;s/spigot-1.8.8.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Julian/AppData/Roaming/!!! Julians mc things/Plugin API&apos;s/ShiftSpawn-1.4.13-BETA-SNAPSHOT.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

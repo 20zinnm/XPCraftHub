@@ -1,2 +1,1 @@
-# XPCraftHub
-## Hub plugin for XPCraft
+Error: no_description_found
