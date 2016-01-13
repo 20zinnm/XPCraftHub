@@ -127,5 +127,5 @@ server-selector:
       item: type[wool] data[11] amount[1] name[&bSurvival] lore[&7Click to join|&6This is a new line]
       slot: 1
     shift1:
-      item: type[quartz_block] data[0] amount[1] name[&bShift] lore [&7Click to join | &6There is &e<time> &6time left.]
+      item: type[quartz_block] data[0] amount[1] name[&bShift] lore[&7Click to join | &6There is &e<time> &6time left.]
       slot: 2

@@ -116,14 +116,14 @@ public final class Settings {
     }
 
     public String getQuitMessage(Player player) {
-        String joinMessage = "";
+        String quitMessage = "";
         for (String key : plugin.getConfig().getConfigurationSection("quit-messages").getKeys(false)) {
             if (!player.hasPermission("hub.quitmessages." + key)) {
                 continue;
             }
-            joinMessage = plugin.getConfig().getString("join-messages." + key);
+            quitMessage = plugin.getConfig().getString("quit-messages." + key);
         }
-        return joinMessage == null ? "" : translateAlternateColorCodes('&', joinMessage);
+        return quitMessage == null ? "" : translateAlternateColorCodes('&', quitMessage);
     }
 
     public String getLinksMessage() {
