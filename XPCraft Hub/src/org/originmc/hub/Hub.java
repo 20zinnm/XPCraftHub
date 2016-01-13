@@ -167,7 +167,7 @@ public final class Hub extends JavaPlugin implements Listener {
     	FileConfiguration c = getConfig();
     	joinItem(p,c);
     }
-    
+   
     public void joinItem(Player p, FileConfiguration c) {
     	if (c.getBoolean("player-profile.default")) {
     		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
