@@ -93,6 +93,7 @@ player-stacker:
 player-profile:
   default: true
   displayname: '&e&lPlayer Profile'
+  slot: 3
   lore:
      - ''
      - '&cComing Soon!'

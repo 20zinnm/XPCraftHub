@@ -174,14 +174,14 @@ public final class Hub extends JavaPlugin implements Listener {
     		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
     		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
     		skullMeta.setOwner(p.getName());
-    		skullMeta.setDisplayName(c.getString("player-profile.displayname"));
+    		skullMeta.setDisplayName(ChatColor.translateAlternateColorCodes('&', c.getString("player-profile.displayname")));
     		List<String> skullLore = new ArrayList<>();
     		for (String s : getConfig().getStringList("player-profile.lore")) {
     			skullLore.add(ChatColor.translateAlternateColorCodes('&', s));
     			}
     		skullMeta.setLore(skullLore);
     		skull.setItemMeta(skullMeta);
-    		p.getInventory().setItem(3, skull);
+    		p.getInventory().setItem(getConfig().getInt("player-profile.slot"), skull);
     	}
     }
 }
