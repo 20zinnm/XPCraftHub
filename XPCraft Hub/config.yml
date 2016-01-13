@@ -95,7 +95,6 @@ player-profile:
   displayname: '&e&lPlayer Profile'
   slot: 3
   lore:
-     - ''
      - '&cComing Soon!'
   
 # Server selector configuration section.
