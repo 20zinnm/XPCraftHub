@@ -59,7 +59,6 @@ public final class ItemUtils {
         ItemMeta meta = item.getItemMeta();
         if (!name.isEmpty()) meta.setDisplayName(name);
         if (!lore.isEmpty()) meta.setLore(lore);
-        meta.spigot().setUnbreakable(true);
         item.setItemMeta(meta);
 
         // Return item.

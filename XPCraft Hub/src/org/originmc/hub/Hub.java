@@ -5,6 +5,7 @@ import com.google.common.collect.Maps;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Material;
+import org.bukkit.SkullType;
 import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.configuration.InvalidConfigurationException;
 import org.bukkit.configuration.file.FileConfiguration;
@@ -22,7 +23,7 @@ import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.SkullMeta;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.scheduler.BukkitRunnable;
+
 import org.originmc.hub.commands.CmdEject;
 import org.originmc.hub.commands.CmdHelp;
 import org.originmc.hub.commands.CmdLinks;
@@ -175,10 +176,12 @@ public final class Hub extends JavaPlugin implements Listener {
     		skullMeta.setOwner(p.getName());
     		skullMeta.setDisplayName(c.getString("player-profile.displayname"));
     		List<String> skullLore = new ArrayList<>();
-		skullLore.add(ChatColor.translateAlternateColorCodes('&', getConfig().getStringList("player-profile.lore")));
-		skullMeta.setLore(skullLore);
-		skull.setItemMeta(skullMeta);
-		p.getInventory().setItem(3, skull);
+    		for (String s : getConfig().getStringList("player-profile.lore")) {
+    			skullLore.add(ChatColor.translateAlternateColorCodes('&', s));
+    			}
+    		skullMeta.setLore(skullLore);
+    		skull.setItemMeta(skullMeta);
+    		p.getInventory().setItem(3, skull);
     	}
     }
 }

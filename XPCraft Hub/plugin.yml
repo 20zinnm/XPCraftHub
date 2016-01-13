@@ -1,6 +1,6 @@
 name: XPCraftHub
 main: org.originmc.hub.Hub
-version: 5.0
+version: 6.0
 description: Hub Plugin For XPCraft
 authors: [Ciberg, Sudzzy, boomboompower]
 depend: [ShiftSpawn]

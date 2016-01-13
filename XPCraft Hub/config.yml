@@ -1,5 +1,5 @@
 # Don't touch this. It's here to determine whether you need to refresh your config.
-config-version: 5
+config-version: 6
 
 # Disables all block burn damage on the server.
 disable-burn: true
@@ -39,17 +39,16 @@ disable-placing: true
 newbie-message: '&bWelcome our newest member, &3&l{PLAYER} &bto the server!'
 
 # Custom join message can be specified here. Set this to '' to display nothing.
-# join-message: '&b[+] &3{PLAYER} has joined the game.'
 join-messages:
   default: '&b[+] &3{PLAYER} has joined the game.'
   admin: '&b[+] &c{PLAYER} - Admin - has joined the game.'
-  op: '&b[+] &c&k:&r &a&l{PLAYER} &a- OP - has joined the game.'
+  op: '&b[+] &a&l{PLAYER} &a- OP - has joined the game.'
 
 # Custom quit message can be specified here. Set this to '' to display nothing.
 quit-message:
   default: '&c[+] &3{PLAYER} has left the game.'
-  admin: '&c[+] &4{PLAYER} - Admin - has left the game.'
-  op: '&c[+] &c&k:&r &4&l{PLAYER} &c- OP - has left the game.'
+  admin: '&c[+] &c{PLAYER} - Admin - has left the game.'
+  op: '&c[+] &4&l{PLAYER} &4- OP - has left the game.'
 
 links-message: |
   &e&lWebsite: &7&oComing soon!
@@ -94,9 +93,9 @@ player-stacker:
 player-profile:
   default: true
   displayname: '&e&lPlayer Profile'
-  lore: |
-    This Is A Line
-    This Is Another Line!
+  lore:
+     - ''
+     - '&cComing Soon!'
   
 # Server selector configuration section.
 server-selector:
