@@ -169,21 +169,16 @@ public final class Hub extends JavaPlugin implements Listener {
     }
     
     public void joinItem(Player p, FileConfiguration c) {
-    	new BukkitRunnable() {
-			public void run() {
-				if(c.getBoolean("player-profile.default")) {	
-					ItemStack skull = new ItemStack(Material.SKULL, 1, (short) 3);
-			        SkullMeta  meta = (SkullMeta) Bukkit.getItemFactory().getItemMeta(Material.SKULL_ITEM);
-			        meta.setOwner(p.getName());
-			        meta.setDisplayName(c.getString("player-profile.displayname"));
-			        List<String> skulllore = new ArrayList<>();
-			        skulllore.add(ChatColor.translateAlternateColorCodes('&', getConfig().getString("player-profile.lore")));
-			        meta.setLore(skulllore);
-			        skull.setItemMeta(meta);
-			        p.getInventory().setItem(3, skull);
-			        p.updateInventory();
-				}
-			}
-		}.runTaskLater(this, 10);
+    	if (c.getBoolean("player-profile.default")) {
+    		ItemStack skull = new ItemStack(Material.SKULL_ITEM, 1, (short) SkullType.PLAYER.ordinal());
+    		SkullMeta skullMeta = (SkullMeta) skull.getItemMeta();
+    		skullMeta.setOwner(p.getName());
+    		skullMeta.setDisplayName(c.getString("player-profile.displayname"));
+    		List<String> skullLore = new ArrayList<>();
+		skullLore.add(ChatColor.translateAlternateColorCodes('&', getConfig().getStringList("player-profile.lore")));
+		skullMeta.setLore(skullLore);
+		skull.setItemMeta(skullMeta);
+		p.getInventory().setItem(3, skull);
+    	}
     }
 }
