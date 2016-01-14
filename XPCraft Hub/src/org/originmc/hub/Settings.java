@@ -2,6 +2,7 @@ package org.originmc.hub;
 
 import com.google.common.collect.Maps;
 import org.bukkit.Bukkit;
+import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.World;
 import org.bukkit.configuration.ConfigurationSection;
@@ -11,7 +12,6 @@ import org.bukkit.inventory.ItemStack;
 
 import java.util.HashMap;
 
-import static org.bukkit.ChatColor.translateAlternateColorCodes;
 import static org.originmc.hub.util.ItemUtils.parseItem;
 import static org.originmc.hub.util.NumUtils.parseInt;
 
@@ -101,7 +101,7 @@ public final class Settings {
     
 
     public String getNewbieMessage() {
-        return translateAlternateColorCodes('&', plugin.getConfig().getString("newbie-message"));
+        return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("newbie-message"));
     }
 
     public String getJoinMessage(Player player) {
@@ -112,7 +112,7 @@ public final class Settings {
             }
             joinMessage = plugin.getConfig().getString("join-messages." + key);
         }
-        return joinMessage == null ? "" : translateAlternateColorCodes('&', joinMessage);
+        return joinMessage == null ? "" : ChatColor.translateAlternateColorCodes('&', joinMessage);
     }
 
     public String getQuitMessage(Player player) {
@@ -123,11 +123,11 @@ public final class Settings {
             }
             quitMessage = plugin.getConfig().getString("quit-messages." + key);
         }
-        return quitMessage == null ? "" : translateAlternateColorCodes('&', quitMessage);
+        return quitMessage == null ? "" : ChatColor.translateAlternateColorCodes('&', quitMessage);
     }
 
     public String getLinksMessage() {
-        return translateAlternateColorCodes('&', plugin.getConfig().getString("links-message"));
+        return ChatColor.translateAlternateColorCodes('&', plugin.getConfig().getString("links-message"));
     }
 
     public boolean cleanInventoryOnJoin() {

@@ -45,7 +45,7 @@ join-messages:
   op: '&b[+] &a&l{PLAYER} &a- OP - has joined the game.'
 
 # Custom quit message can be specified here. Set this to '' to display nothing.
-quit-message:
+quit-messages:
   default: '&c[+] &3{PLAYER} has left the game.'
   admin: '&c[+] &c{PLAYER} - Admin - has left the game.'
   op: '&c[+] &4&l{PLAYER} &4- OP - has left the game.'

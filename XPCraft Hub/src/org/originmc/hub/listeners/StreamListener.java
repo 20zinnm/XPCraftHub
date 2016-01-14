@@ -33,16 +33,6 @@ public final class StreamListener implements Listener {
         }
     }
 
-    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGH)
-    public void setJoinMessage(PlayerJoinEvent event) {
-    	Player p = event.getPlayer();
-        if (plugin.getSettings().getJoinMessage(p).isEmpty()) {
-            event.setJoinMessage(null);
-        } else {
-            event.setJoinMessage(plugin.getSettings().getJoinMessage(p).replace("{PLAYER}", p.getName()));
-        }
-    }
-
     @EventHandler(ignoreCancelled = true, priority = EventPriority.MONITOR)
     public void shootFirework(PlayerJoinEvent event) {
         // Do nothing if player does not have permission.
@@ -90,7 +80,17 @@ public final class StreamListener implements Listener {
         if (plugin.getSettings().getQuitMessage(p).isEmpty()) {
             event.setQuitMessage(null);
         } else {
-            event.setQuitMessage(plugin.getSettings().getJoinMessage(p).replace("{PLAYER}", p.getName()));
+            event.setQuitMessage(plugin.getSettings().getQuitMessage(p).replace("{PLAYER}", p.getName()));
+        }
+    }
+    
+    @EventHandler(ignoreCancelled = true, priority = EventPriority.HIGH)
+    public void setJoinMessage(PlayerJoinEvent event) {
+    	Player p = event.getPlayer();
+        if (plugin.getSettings().getJoinMessage(p).isEmpty()) {
+            event.setJoinMessage(null);
+        } else {
+            event.setJoinMessage(plugin.getSettings().getJoinMessage(p).replace("{PLAYER}", p.getName()));
         }
     }
 }

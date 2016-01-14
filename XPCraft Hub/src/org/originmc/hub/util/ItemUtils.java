@@ -5,6 +5,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import com.gmail.gogobebe2.shiftspawn.api.GameAPI;
 
+import net.md_5.bungee.api.ChatColor;
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -40,8 +42,13 @@ public final class ItemUtils {
                     name = translateAlternateColorCodes('&', info[1]);
                     break;
                 case "lore":
-                    lore = Arrays.asList(translateAlternateColorCodes('&', info[1]).replace("<time>", GameAPI.getFormattedTime()).replace("<Time>", GameAPI.getFormattedTime()).split("\\|"));
-                    break;
+                	if(GameAPI.getMinutes() == Integer.MAX_VALUE) {
+                		lore = Arrays.asList(translateAlternateColorCodes('&', info[1]).replace("<time>", GameAPI.getFormattedTime()).replace("<Time>", ChatColor.translateAlternateColorCodes('&', "&aFinished!")).split("\\|"));
+                		break;
+                	} else {
+                		lore = Arrays.asList(translateAlternateColorCodes('&', info[1]).replace("<time>", GameAPI.getFormattedTime()).replace("<Time>", GameAPI.getFormattedTime()).split("\\|"));
+                		break;
+                	}
             }
         }
 
