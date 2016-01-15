@@ -3,6 +3,8 @@ package org.originmc.hub.util;
 import org.bukkit.Material;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import com.gmail.gogobebe2.shiftspawn.GameState;
 import com.gmail.gogobebe2.shiftspawn.api.GameAPI;
 
 import net.md_5.bungee.api.ChatColor;
@@ -42,13 +44,7 @@ public final class ItemUtils {
                     name = translateAlternateColorCodes('&', info[1]);
                     break;
                 case "lore":
-                	if(GameAPI.getMinutes() == Integer.MAX_VALUE) {
-                		lore = Arrays.asList(translateAlternateColorCodes('&', info[1]).replace("<time>", GameAPI.getFormattedTime()).replace("<Time>", ChatColor.translateAlternateColorCodes('&', "&aFinished!")).split("\\|"));
-                		break;
-                	} else {
-                		lore = Arrays.asList(translateAlternateColorCodes('&', info[1]).replace("<time>", GameAPI.getFormattedTime()).replace("<Time>", GameAPI.getFormattedTime()).split("\\|"));
-                		break;
-                	}
+                	statements(GameState.STARTED, "", "", "");
             }
         }
 
@@ -78,5 +74,11 @@ public final class ItemUtils {
         } catch (IllegalArgumentException ex) {
             return Material.AIR;
         }
+    }
+    public static void statements(GameState gameState, String message, String replaceThis, String replaceWith) {
+    	List<String> lore = new ArrayList<>();
+    	if(GameAPI.getGameState() == gameState) {
+    		lore = Arrays.asList(translateAlternateColorCodes('&', message).replace(replaceThis, replaceWith).split("\\|"));
+    	}
     }
 }
